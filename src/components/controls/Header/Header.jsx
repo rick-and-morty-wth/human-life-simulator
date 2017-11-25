@@ -10,4 +10,4 @@ export default (props, context) => {
         <PlayerProcess></PlayerProcess>
         <HomeSmallButton width="48px" height="48px"></HomeSmallButton>
     </Navbar> : <Navbar sliding><div></div>{props.children}</Navbar> }</div>);
-};
+}

@@ -1,8 +1,8 @@
 import React from 'react';
 import PlayerAvatar from './PlayerAvatar';
-import { player } from '../../state';
+import {inject, observer} from 'mobx-react';
 
-export default (props, context) => {
+export default inject("player")(observer(({player}, context) => {
     return (<div className="player-process__wr">
         <PlayerAvatar/>
         <div className="player-process__user-wr">
@@ -10,4 +10,4 @@ export default (props, context) => {
             <div className="player-process__user-progress">Daily Progress: {player.progress}%</div>
         </div>
     </div>);
-};
+}));

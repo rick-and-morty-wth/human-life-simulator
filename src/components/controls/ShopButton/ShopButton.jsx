@@ -1,10 +1,11 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
 import {Link} from 'framework7-react';
+import {inject, observer} from 'mobx-react';
 
-export default (props, context) => {
-    return (<Link href={props.to} className="button__wr" openPanel="right">
-            <Badge count={props.count} />
+export default inject("sounds", "game")(observer(({to, count, sounds}, context) => {
+    return (<Link href={to} className="button__wr" onClick={sounds.play("btn")} openPanel="right">
+            <Badge count={count} />
             <svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="1" transform="translate(-242.000000, -569.000000)">
@@ -25,4 +26,4 @@ export default (props, context) => {
                 </g>
             </svg>
     </Link>);
-};
+}));

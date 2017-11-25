@@ -1,13 +1,14 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'framework7-react';
+import {inject, observer} from 'mobx-react';
 
 let back = (context)=> ()=> {
     let router = context.framework7AppContext.getRouter();
     router.framework7.mainView.router.back({ url: "/", force: true, reload: true })
 }
 
-const HomeSmallButton = (props, context) => {
-    return (<Link back><svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg">
+const HomeSmallButton = inject("sounds", "game")(observer(({sounds}, context) => {
+    return (<Link back onClick={sounds.play("btn")}><svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="3" transform="translate(-315.000000, -47.000000)">
             <g id="Group-3" transform="translate(317.000000, 49.000000)">
@@ -33,7 +34,7 @@ const HomeSmallButton = (props, context) => {
         </g>
     </g>
 </svg></Link>);
-};
+}));
 
 HomeSmallButton.contextTypes = {
     framework7AppContext: PropTypes.object

@@ -1,8 +1,13 @@
 import React from 'react';
-import { player } from '../../state';
+import {inject, observer} from 'mobx-react';
 
-export default (props, context) => {
-    return (<div className={player.isDone[props.lvl.id] ? "level-item__wr level-item__done" : "level-item__wr"}>
+export default inject("sounds", "game", "player")(observer((props, context) => {
+    let player = props.player;
+
+    return (<div className={player.isDone.has(props.lvl.id) ? "level-item__wr level-item__done" : "level-item__wr"} onClick={()=> {
+            props.sounds.play("btn")();
+            player.mapIsDone(props.lvl)();
+            }}>
         <div className="level-item__img-wr">
             <img src={props.lvl.image} className="level-item__img"/>
 
@@ -25,9 +30,9 @@ export default (props, context) => {
             </svg>
         </div>
         <div className="level-item__texts">
-            { player.isDone[props.lvl.id] ? <div className="level-item__is-done">Daily is Done</div> : <div className="level-item__is-done"></div>}
+            { player.isDone.has(props.lvl.id) ? <div className="level-item__is-done">Daily is Done</div> : <div className="level-item__is-done"></div>}
             <div className="level-item__name">{props.lvl.name}</div>
             { player.bestScore[props.lvl.id] ? <div className="level-item__best-score">Best Score: {player.bestScore[props.lvl.id]}</div> : <div className="level-item__best-score"></div>}
         </div>
     </div>);
-};
+}));
