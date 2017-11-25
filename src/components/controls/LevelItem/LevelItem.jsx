@@ -1,10 +1,11 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
+import {Link} from 'framework7-react';
 
 export default inject("sounds", "game", "player")(observer((props, context) => {
     let player = props.player;
 
-    return (<div className={player.isDone.has(props.lvl.id) ? "level-item__wr level-item__done" : "level-item__wr"} onClick={()=> {
+    return (<a href={props.lvl.path} className={player.isDone.has(props.lvl.id) ? "level-item__wr level-item__done" : "level-item__wr"} onClick={()=> {
             props.sounds.play("btn")();
             player.mapIsDone(props.lvl)();
             }}>
@@ -34,5 +35,5 @@ export default inject("sounds", "game", "player")(observer((props, context) => {
             <div className="level-item__name">{props.lvl.name}</div>
             { player.bestScore[props.lvl.id] ? <div className="level-item__best-score">Best Score: {player.bestScore[props.lvl.id]}</div> : <div className="level-item__best-score"></div>}
         </div>
-    </div>);
+    </a>);
 }));

@@ -390,3 +390,13 @@ html.pixel-ratio-3 .navbar:after {
     left: 126px;
     z-index: -1;
 }
+
+/* MOVIE GAME */
+.easter-movie-game-screen__wr {
+    color: white;
+    background: black;
+}
+
+.easter-movie-game-screen__wr button {
+    color: white;
+}

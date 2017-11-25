@@ -1,7 +1,7 @@
 import Home from './components/pages/Home';
 import Store from './components/pages/Store';
 import Levels from './components/pages/Levels';
-
+import EasterMovieGame from './components/pages/EasterMovieGame';
 
 export const routes = [{
     path: '/',
@@ -13,9 +13,6 @@ export const routes = [{
     path: '/levels/',
     component: Levels
 },{
-    path: '/easterMovie/',
-    component: easterMovie
-},{
-    path: '/easterMovieGamePage/',
-    component: easterMovieGame
+    path: '/easter-movie-game/',
+    component: EasterMovieGame
 }];

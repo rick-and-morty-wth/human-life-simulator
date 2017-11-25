@@ -11,16 +11,19 @@ const game = observable({
         {
             id: 1,
             image: level1,
+            path: '/easter-movie-game',
             name: 'Rick Driving Bitches'
         },
         {
             id: 2,
             image: level3,
+            path: "/",
             name: 'Wabu-Labu-Dabdab'
         },
         {
             id: 3,
             image: level2,
+            path: "/",
             name: 'Dancing Rick Bitches'
         }
     ],
