@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin id="cordova-plugin-hidden-statusbar" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>Cordova Hidden Statusbar</name>
+    <author>Enrico Deleo (http://enricodeleo.com/)</author>
+    <description>Cordova / PhoneGap Plugin that hides the statusbar at launch.</description>
+    <keywords>cordova, ios, app, statusbar</keywords>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <dependency id="cordova-plugin-statusbar" />
+
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <preference name="Fullscreen" value="true" />
+      </config-file>
+      <config-file target="*-Info.plist" parent="UIStatusBarHidden">
+        <true/>
+      </config-file>
+      <config-file target="*-Info.plist" parent="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+      </config-file>
+    </platform>
+</plugin>
