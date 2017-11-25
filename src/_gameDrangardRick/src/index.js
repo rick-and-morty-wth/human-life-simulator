@@ -2,6 +2,7 @@ import { r, thickness } from './constants.js';
 import * as rick from './body.js';
 import * as materials from './materials.js';
 import * as collisGr from './collisionGroups.js';
+import * as ground from './ground.js';
 
 var app = new p2.WebGLRenderer(function () {
 
@@ -33,12 +34,6 @@ var app = new p2.WebGLRenderer(function () {
     // Head
     world.addBody(rick.head);
 
-    //Some
-    world.addBody(rick.some_1);
-
-    // Some_pivot
-    world.addConstraint(rick.some_1_pivot);
-
     // Upper arms
     world.addBody(rick.upperLeftArm);
     world.addBody(rick.upperRightArm);
@@ -69,38 +64,25 @@ var app = new p2.WebGLRenderer(function () {
     world.addConstraint(rick.leftElbowJoint);
     world.addConstraint(rick.rightElbowJoint);
 
+    // Bicycle
+    world.addBody(rick.bicycle);
+
+    // Pivot To Right Leg
+    world.addConstraint(rick.PivotToRightLeg);
+
+    // Pivot To Left Leg
+    world.addConstraint(rick.PivotToLeftLeg);
+
+
     // Create ground plane
-    let plane = new p2.Body({
-        position: [0, -r * 2]
-    });
-
-    let planeShape = new p2.Plane({ material: materials.groundMaterial })
-    plane.addShape(planeShape);
-
-    planeShape.collisionGroup = collisGr.GROUND;
-    planeShape.collisionMask = collisGr.BODYPARTS | collisGr.OTHER;
-    world.addBody(plane);
+    world.addBody(ground.plane);
     this.newShapeCollisionGroup = collisGr.OTHER;
     this.newShapeCollisionMask = collisGr.BODYPARTS | collisGr.OTHER | collisGr.GROUND;
-
-    world.addBody(plane);
-
-    this.newShapeCollisionGroup = collisGr.OTHER;
-    this.newShapeCollisionMask = collisGr.BODYPARTS | collisGr.OTHER | collisGr.GROUND;
-
-
-    // Some staff
-    let circleBody = new p2.Body({
-        position: [6 + 6 + Math.random() * 3, -2] // Set initial position
-    });
-
-    circleBody.addShape(new p2.Circle({ radius: 5 * Math.random(), material: materials.groundMaterial }));
-    world.addBody(circleBody);
 
     // Apply current engine torque after each step
     var left = 0, right = 0;
     world.on("postStep", function (evt) {
-        rick.some_1.angularForce += (left - right) * 30;
+        rick.bicycle.angularForce += (left - right) * 100;
     });
 
     this.on("keydown", function (evt) {
