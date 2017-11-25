@@ -1,6 +1,7 @@
-import {r, thickness} from './constants.js'
-import * as rick from './body.js'
-
+import {r, thickness} from './constants.js';
+import * as rick from './body.js';
+import * as materials from './materials.js';
+import * as collisGr from './collisionGroups.js';
 
 var app = new p2.WebGLRenderer(function () {
 
@@ -11,32 +12,20 @@ var app = new p2.WebGLRenderer(function () {
 
     this.setWorld(world);
 
-    // Create a contact material between ground and wheels
-    // We need to do this to add some extra friction
-    var groundMaterial = new p2.Material();
-    var wheelMaterial = new p2.Material();
-
-    var groundWheelContactMaterial = new p2.ContactMaterial(groundMaterial, wheelMaterial, {
-        friction: 30
-    });
-
     // Create wheels
-    var wheelBodyA = createWheel(world, [-2.2 * r, 0], wheelMaterial);
+    var wheelBodyA = createWheel(world, [-2.2 * r, 0], materials.wheelMaterial);
 
-    // Create chassis
-    var chassisBody = new p2.Body({ mass: 1, position: [-0.3 * r, 2.2 * r] });
+    // // Create chassis
+    // var chassisBody = new p2.Body({ mass: 1, position: [-0.3 * r, 2.2 * r] });
+    // world.addBody(chassisBody);
 
-    world.addBody(chassisBody);
-
-    // Constrain wheels to chassis: let them move vertically and rotate using a prismatic
-    var c1 = new p2.PrismaticConstraint(chassisBody, wheelBodyA, {
-        localAnchorB: [0, 0],
-        localAxisA: [0, 1],
-        disableRotationalLock: true
-    });
-
-
-    world.addConstraint(c1);
+    // // Constrain wheels to chassis: let them move vertically and rotate using a prismatic
+    // var c1 = new p2.PrismaticConstraint(chassisBody, wheelBodyA, {
+    //     localAnchorB: [0, 0],
+    //     localAxisA: [0, 1],
+    //     disableRotationalLock: true
+    // });
+    // world.addConstraint(c1);
 
 /**
  * Соединяем части тела между собой и закидываем в сцену
@@ -111,23 +100,36 @@ var app = new p2.WebGLRenderer(function () {
     world.addConstraint(rick.leftElbowJoint);
     world.addConstraint(rick.rightElbowJoint);
 
+    //
 
-world.addContactMaterial(groundWheelContactMaterial);
+world.addContactMaterial(materials.groundWheelContactMaterial);
 
     // Create ground plane
-    let groundBody = new p2.Body({
+    let plane = new p2.Body({
         position: [0, -r * 2]
     });
 
-    groundBody.addShape(new p2.Plane({ material: groundMaterial }));
-    world.addBody(groundBody);
+    let planeShape = new p2.Plane({ material: materials.groundMaterial })
+    plane.addShape(planeShape);
 
-    let circleBody = new p2.Body({
-        position: [6 + 6 + Math.random() * 3, -2] // Set initial position
-    });
+    planeShape.collisionGroup = collisGr.GROUND;
+    planeShape.collisionMask =  collisGr.BODYPARTS|collisGr.OTHER;
+    world.addBody(plane);
+    this.newShapeCollisionGroup = collisGr.OTHER;
+    this.newShapeCollisionMask =  collisGr.BODYPARTS|collisGr.OTHER|collisGr.GROUND;
 
-    circleBody.addShape(new p2.Circle({ radius: 5 * Math.random(), material: groundMaterial }));
-    world.addBody(circleBody);
+    world.addBody(plane);
+
+    this.newShapeCollisionGroup = collisGr.OTHER;
+    this.newShapeCollisionMask = collisGr.BODYPARTS|collisGr.OTHER|collisGr.GROUND;
+
+    // let circleBody = new p2.Body({
+    //     position: [6 + 6 + Math.random() * 3, -2] // Set initial position
+    // });
+
+    // circleBody.addShape(new p2.Circle({ radius: 5 * Math.random(), material: materials.groundMaterial }));
+    // world.addBody(circleBody);
+
     // Add circle bumps along the ground
 
     // Apply current engine torque after each step
@@ -156,7 +158,7 @@ world.addContactMaterial(groundWheelContactMaterial);
         }
     });
 
-    this.followBody = wheelBodyA; // Make camera follow
+    this.followBody = rick.head; // Make camera follow
     this.frame(0, 0, 10, 10);
 });
 

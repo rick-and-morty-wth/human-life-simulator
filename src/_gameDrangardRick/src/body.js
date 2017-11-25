@@ -1,3 +1,6 @@
+import * as materials from './materials.js';
+import * as collisGr from './collisionGroups.js';
+
 const shouldersDistance = 0.5,
     upperArmLength = 0.4,
     lowerArmLength = 0.4,
@@ -12,11 +15,7 @@ const shouldersDistance = 0.5,
     lowerLegSize = 0.2,
     lowerLegLength = 0.5;
 
-var OTHER = Math.pow(2, 1),
-    BODYPARTS = Math.pow(2, 2),
-    GROUND = Math.pow(2, 3),
-    OTHER = Math.pow(2, 4),
-    bodyPartShapes = [];
+var bodyPartShapes = [];
 
 
 var headShape = new p2.Circle({ radius: headRadius }),
@@ -61,8 +60,8 @@ bodyPartShapes.push(
 
 for (var i = 0; i < bodyPartShapes.length; i++) {
     var s = bodyPartShapes[i];
-    s.collisionGroup = BODYPARTS;
-    s.collisionMask = GROUND | OTHER;
+    s.collisionGroup = collisGr.BODYPARTS;
+    s.collisionMask = collisGr.GROUND | collisGr.OTHER;
 }
 
 // Lower legs
@@ -80,6 +79,7 @@ export var lowerRightLeg = new p2.Body({
 export var upperLeftLeg = new p2.Body({
     mass: 1,
     position: [-shouldersDistance / 2, lowerLeftLeg.position[1] + lowerLegLength / 2 + upperLegLength / 2],
+    material: materials.wheelMaterial
 });
 
 export var upperRightLeg = new p2.Body({
