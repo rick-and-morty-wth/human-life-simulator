@@ -28,7 +28,8 @@ var headShape = new p2.Circle({ radius: headRadius }),
     upperLegShapeLeft = new p2.Box({ width: upperLegSize, height: upperLegLength }),
     upperLegShapeRight = new p2.Box({ width: upperLegSize, height: upperLegLength }),
     lowerLegShapeLeft = new p2.Box({ width: lowerLegSize, height: lowerLegLength }),
-    lowerLegShapeRight = new p2.Box({ width: lowerLegSize, height: lowerLegLength });
+    lowerLegShapeRight = new p2.Box({ width: lowerLegSize, height: lowerLegLength }),
+    some_shape = new p2.Circle({ radius: headRadius * 2 });
 
 export let shapes = {
     headShape,
@@ -41,7 +42,8 @@ export let shapes = {
     upperLegShapeLeft,
     upperLegShapeRight,
     lowerLegShapeLeft,
-    lowerLegShapeRight
+    lowerLegShapeRight,
+    some_shape
 }
 
 bodyPartShapes.push(
@@ -55,7 +57,8 @@ bodyPartShapes.push(
     upperLegShapeRight,
     upperLegShapeLeft,
     lowerLegShapeRight,
-    lowerLegShapeLeft
+    lowerLegShapeLeft,
+    some_shape
 );
 
 for (var i = 0; i < bodyPartShapes.length; i++) {
@@ -64,122 +67,187 @@ for (var i = 0; i < bodyPartShapes.length; i++) {
     s.collisionMask = collisGr.GROUND | collisGr.OTHER;
 }
 
-// Lower legs
-export var lowerLeftLeg = new p2.Body({
+// Lower legs - Left
+var lowerLeftLeg = new p2.Body({
     mass: 1,
     position: [-shouldersDistance / 2, lowerLegLength / 2],
 });
+lowerLeftLeg.addShape(shapes.lowerLegShapeLeft);
+export {lowerLeftLeg}
 
-export var lowerRightLeg = new p2.Body({
+// Lower legs - Right
+var lowerRightLeg = new p2.Body({
     mass: 1,
     position: [shouldersDistance / 2, lowerLegLength / 2],
 });
+lowerRightLeg.addShape(shapes.lowerLegShapeRight);
+export {lowerRightLeg}
 
-// Upper legs
-export var upperLeftLeg = new p2.Body({
+// Upper legs - Left
+var upperLeftLeg = new p2.Body({
     mass: 1,
     position: [-shouldersDistance / 2, lowerLeftLeg.position[1] + lowerLegLength / 2 + upperLegLength / 2],
-    material: materials.wheelMaterial
 });
+upperLeftLeg.addShape(shapes.upperLegShapeLeft);
+export {upperLeftLeg}
 
-export var upperRightLeg = new p2.Body({
+// Upper legs - Right
+var upperRightLeg = new p2.Body({
     mass: 1,
     position: [shouldersDistance / 2, lowerRightLeg.position[1] + lowerLegLength / 2 + upperLegLength / 2],
 });
+upperRightLeg.addShape(shapes.upperLegShapeRight);
+export {upperRightLeg}
 
 // Pelvis
-export var pelvis = new p2.Body({
+var pelvis = new p2.Body({
     mass: 1,
     position: [0, upperLeftLeg.position[1] + upperLegLength / 2 + pelvisLength / 2],
 });
+pelvis.addShape(shapes.pelvisShape);
+export {pelvis}
 
 // Upper body
-export var upperBody = new p2.Body({
+var upperBody = new p2.Body({
     mass: 1,
     position: [0, pelvis.position[1] + pelvisLength / 2 + upperBodyLength / 2],
 });
+upperBody.addShape(shapes.upperBodyShape);
+export {upperBody}
 
 // Head
-export var head = new p2.Body({
+ var head = new p2.Body({
     mass: 1,
     position: [0, upperBody.position[1] + upperBodyLength / 2 + headRadius + neckLength],
 });
+head.addShape(shapes.headShape);
+export {head}
 
-// Upper arms
-export var upperLeftArm = new p2.Body({
+
+// Some
+var some_1 = new p2.Body({
+    mass: 1,
+    position: [1, 1],
+});
+some_1.addShape(shapes.some_shape);
+export {some_1}
+
+// Some pivot
+var some_1_pivot = new p2.RevoluteConstraint(some_1, pelvis, {
+    localPivotA: [1 / 2, 0],
+    localPivotB: [1 / 2, 0],
+});
+some_1_pivot.setLimits(-Math.PI / 8, Math.PI / 8);
+export {some_1_pivot}
+
+// Upper arms Left
+var upperLeftArm = new p2.Body({
     mass: 1,
     position: [-shouldersDistance / 2 - upperArmLength / 2, upperBody.position[1] + upperBodyLength / 2],
 });
-export var upperRightArm = new p2.Body({
+upperLeftArm.addShape(shapes.upperArmShapeLeft);
+export {upperLeftArm}
+
+// Upper arms Right
+var upperRightArm = new p2.Body({
     mass: 1,
     position: [shouldersDistance / 2 + upperArmLength / 2, upperBody.position[1] + upperBodyLength / 2],
 });
+upperRightArm.addShape(shapes.upperArmShapeRight);
+export {upperRightArm}
 
-// lower arms
+// lower arms Left
 export var lowerLeftArm = new p2.Body({
     mass: 1,
     position: [upperLeftArm.position[0] - lowerArmLength / 2 - upperArmLength / 2,
     upperLeftArm.position[1]],
 });
+lowerLeftArm.addShape(shapes.lowerArmShapeLeft);
 
+// lower arms Right
 export var lowerRightArm = new p2.Body({
     mass: 1,
     position: [upperRightArm.position[0] + lowerArmLength / 2 + upperArmLength / 2,
     upperRightArm.position[1]],
 });
+lowerRightArm.addShape(shapes.lowerArmShapeRight);
 
 // Neck joint
-export var neckJoint = new p2.RevoluteConstraint(head, upperBody, {
+var neckJoint = new p2.RevoluteConstraint(head, upperBody, {
     localPivotA: [0, -headRadius - neckLength / 2],
     localPivotB: [0, upperBodyLength / 2],
 });
+neckJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {neckJoint}
 
-// Knee joints
-export var leftKneeJoint = new p2.RevoluteConstraint(lowerLeftLeg, upperLeftLeg, {
+// Knee joints - left
+var leftKneeJoint = new p2.RevoluteConstraint(lowerLeftLeg, upperLeftLeg, {
     localPivotA: [0, lowerLegLength / 2],
     localPivotB: [0, -upperLegLength / 2],
 });
+leftKneeJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {leftKneeJoint}
 
-export var rightKneeJoint = new p2.RevoluteConstraint(lowerRightLeg, upperRightLeg, {
+// Knee joints - right
+var rightKneeJoint = new p2.RevoluteConstraint(lowerRightLeg, upperRightLeg, {
     localPivotA: [0, lowerLegLength / 2],
     localPivotB: [0, -upperLegLength / 2],
 });
+rightKneeJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {rightKneeJoint}
 
-// Hip joints
-export var leftHipJoint = new p2.RevoluteConstraint(upperLeftLeg, pelvis, {
+// Hip joints - left
+var leftHipJoint = new p2.RevoluteConstraint(upperLeftLeg, pelvis, {
     localPivotA: [0, upperLegLength / 2],
     localPivotB: [-shouldersDistance / 2, -pelvisLength / 2],
 });
+leftHipJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {leftHipJoint}
 
-export var rightHipJoint = new p2.RevoluteConstraint(upperRightLeg, pelvis, {
+// Hip joints - right
+var rightHipJoint = new p2.RevoluteConstraint(upperRightLeg, pelvis, {
     localPivotA: [0, upperLegLength / 2],
     localPivotB: [shouldersDistance / 2, -pelvisLength / 2],
 });
+rightHipJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {rightHipJoint}
 
 // Spine
-export var spineJoint = new p2.RevoluteConstraint(pelvis, upperBody, {
+var spineJoint = new p2.RevoluteConstraint(pelvis, upperBody, {
     localPivotA: [0, pelvisLength / 2],
     localPivotB: [0, -upperBodyLength / 2],
 });
+spineJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {spineJoint}
 
-// Shoulders
-export var leftShoulder = new p2.RevoluteConstraint(upperBody, upperLeftArm, {
+// Shoulders - left
+var leftShoulder = new p2.RevoluteConstraint(upperBody, upperLeftArm, {
     localPivotA: [-shouldersDistance / 2, upperBodyLength / 2],
     localPivotB: [upperArmLength / 2, 0],
 });
+leftShoulder.setLimits(-Math.PI / 3, Math.PI / 3);
+export {leftShoulder}
 
-export var rightShoulder = new p2.RevoluteConstraint(upperBody, upperRightArm, {
+// Shoulders - right
+var rightShoulder = new p2.RevoluteConstraint(upperBody, upperRightArm, {
     localPivotA: [shouldersDistance / 2, upperBodyLength / 2],
     localPivotB: [-upperArmLength / 2, 0],
 });
+rightShoulder.setLimits(-Math.PI / 3, Math.PI / 3);
+export {rightShoulder}
 
-// Elbow joint
-export var leftElbowJoint = new p2.RevoluteConstraint(lowerLeftArm, upperLeftArm, {
+// Elbow joint - left
+var leftElbowJoint = new p2.RevoluteConstraint(lowerLeftArm, upperLeftArm, {
     localPivotA: [lowerArmLength / 2, 0],
     localPivotB: [-upperArmLength / 2, 0],
 });
+leftElbowJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {leftElbowJoint}
 
-export var rightElbowJoint = new p2.RevoluteConstraint(lowerRightArm, upperRightArm, {
+// Elbow joint - right
+var rightElbowJoint = new p2.RevoluteConstraint(lowerRightArm, upperRightArm, {
     localPivotA: [-lowerArmLength / 2, 0],
     localPivotB: [upperArmLength / 2, 0],
 });
+rightElbowJoint.setLimits(-Math.PI / 8, Math.PI / 8);
+export {rightElbowJoint}
