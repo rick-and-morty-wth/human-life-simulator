@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import Home from './pages/Home';
 import Header from './controls/Header/Header';
+import Sound from 'react-sound';
+import oooo_yeah__caaan_doo from '../sounds/oooo_yeah__caaan_doo.wav';
 
 import {
     Framework7App, Statusbar, Panel, View, Navbar, Pages, Page, ContentBlock, ContentBlockTitle,
@@ -137,6 +139,7 @@ const AppLoginScreen = () => (
     <LoginScreen id="shopping-screen">
         <View>
             <Pages>
+                <Sound url={oooo_yeah__caaan_doo} playStatus={Sound.status.PAUSED} />
                 <Page loginScreen className="shopping-screen__wr">
                     <Header><CloseSmallButton></CloseSmallButton></Header>
                     <div className="store__shop-content">
