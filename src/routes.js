@@ -12,4 +12,10 @@ export const routes = [{
 }, {
     path: '/levels/',
     component: Levels
+},{
+    path: '/easterMovie/',
+    component: easterMovie
+},{
+    path: '/easterMovieGamePage/',
+    component: easterMovieGame
 }];
