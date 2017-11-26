@@ -1605,3 +1605,238 @@ html.pixel-ratio-3 .navbar:after {
             -webkit-transform: rotate(359deg);
     }
 }
+
+@keyframes anim3head-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(9deg);
+    }
+    50% {
+        transform: rotate(9deg);
+    }
+    60% {
+        transform: rotate(9deg);
+    }
+    70% {
+        transform: rotate(9deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+.anim3 .head-pivot {
+    animation: anim3head-pivot 1s infinite;
+}
+
+@keyframes anim3biceps-pivotleft {
+    0% {
+        transform: rotate(-75deg);
+    }
+    40% {
+        transform: rotate(51deg);
+    }
+    50% {
+        transform: rotate(51deg);
+    }
+    60% {
+        transform: rotate(51deg);
+    }
+    70% {
+        transform: rotate(51deg);
+    }
+    100% {
+        transform: rotate(-75deg);
+    }
+}
+
+.anim3 .biceps-pivot.left {
+    animation: anim3biceps-pivotleft 1s infinite;
+}
+
+@keyframes anim3arm-pivotleft {
+    0% {
+        transform: rotate(-12deg);
+    }
+    40% {
+        transform: rotate(81deg);
+    }
+    50% {
+        transform: rotate(60deg);
+    }
+    60% {
+        transform: rotate(84deg);
+    }
+    70% {
+        transform: rotate(51deg);
+    }
+    100% {
+        transform: rotate(-12deg);
+    }
+}
+
+.anim3 .arm-pivot.left {
+    animation: anim3arm-pivotleft 1s infinite;
+}
+
+@keyframes anim3biceps-pivotnotleft {
+    0% {
+        transform: rotate(75deg);
+    }
+    40% {
+        transform: rotate(75deg);
+    }
+    50% {
+        transform: rotate(75deg);
+    }
+    60% {
+        transform: rotate(75deg);
+    }
+    70% {
+        transform: rotate(75deg);
+    }
+    100% {
+        transform: rotate(75deg);
+    }
+}
+
+.anim3 .biceps-pivot:not(.left) {
+    animation: anim3biceps-pivotnotleft 1s infinite;
+}
+
+@keyframes anim3arm-pivotnotleft {
+    0% {
+        transform: rotate(12deg);
+    }
+    40% {
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(12deg);
+    }
+    60% {
+        transform: rotate(12deg);
+    }
+    70% {
+        transform: rotate(12deg);
+    }
+    100% {
+        transform: rotate(12deg);
+    }
+}
+
+.anim3 .arm-pivot:not(.left) {
+    animation: anim3arm-pivotnotleft 1s infinite;
+}
+
+@keyframes anim3thigh-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.anim3 .thigh-pivot.left {
+    animation: anim3thigh-pivotleft 1s infinite;
+}
+
+@keyframes anim3shin-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.anim3 .shin-pivot.left {
+    animation: anim3shin-pivotleft 1s infinite;
+}
+
+@keyframes anim3thigh-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.anim3 .thigh-pivot:not(.left) {
+    animation: anim3thigh-pivotnotleft 1s infinite;
+}
+
+@keyframes anim3shin-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.anim3 .shin-pivot:not(.left) {
+    animation: anim3shin-pivotnotleft 1s infinite;
+}
+
+.page.home-screen__wr .page-content{
+    overflow: hidden !important;
+}
+.dudeFP{
+    left: 60vw;
+    position: absolute;
+    bottom: 0vw;
+    transform: scale(3);
+}

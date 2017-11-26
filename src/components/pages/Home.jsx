@@ -4,6 +4,7 @@ import Header from '../controls/Header/Header';
 import {ContentBlock, Page} from 'framework7-react';
 import {inject, observer} from 'mobx-react';
 import {observable} from 'mobx';
+import Dude from '../controls/Dude/Dude';
 
 const state = observable({
     isRick: false,
@@ -32,6 +33,7 @@ export default inject("sounds", "game", "player")(observer(({game, player}) => {
             {player.person ?
             <div>
                 <Header />
+                <Dude anims={['anim1','anim2','anim3','idle']} theme={'dudeFP'} />
                 <Footer />
             </div> : <StartScreen></StartScreen>}
 
