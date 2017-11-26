@@ -16,6 +16,11 @@ npm run build
 
 The build folder will then contain all of your app's files, optimized and ready for deployment.
 
+For run game
+
+```
+live-server --open='src/_gameDrangardRick' --watch='src/_gameDrangardRick'
+```
 # TODO
 
 * Jumping game
