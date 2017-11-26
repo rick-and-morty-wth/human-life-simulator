@@ -6,7 +6,7 @@ import { ContentBlock, Page } from 'framework7-react';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'framework7-react';
 import { observable } from 'mobx';
-
+import HomeSmallButton from '../controls/HomeSmallButton/HomeSmallButton';
 const state = observable({
     currentBeat: 0,
     rightNotes: 0,
@@ -18,7 +18,7 @@ const leftBeat = (rhythm) => () => {
     document.getElementsByClassName('left-guy')[0].classList.add('punch');
     setTimeout(function () {
         document.getElementsByClassName('left-guy')[0].classList.remove('punch');
-    }, 460);
+    }, 400);
 }
 
 const rightBeat = (rhythm) => () => {
@@ -26,7 +26,7 @@ const rightBeat = (rhythm) => () => {
     document.getElementsByClassName('right-guy')[0].classList.add('kickAss');
     setTimeout(function () {
         document.getElementsByClassName('right-guy')[0].classList.remove('kickAss');
-    }, 460);
+    }, 400);
 }
 
 const beatClick = (rhythm) => () => {
@@ -94,13 +94,15 @@ let rhythm;
 const DancingGame = inject("dancingGame", "player", "game", "sounds")(observer(({ dancingGame }) => {
         rhythm = dancingGame.rhythm;
         return (
+
             <Page className="dancing-game-screen__wr">
+            <HomeSmallButton ></HomeSmallButton>
                 <audio id="audioPlayer" src={dancingGame.rhythm.src} onEnded={onEnded(rhythm)}></audio>
                 <div className="container">
-                    <div id="score">{state.startTimeout ? state.startTimeout : state.rightNotes + ' / ' + rhythm.points.length }</div>
+                    <div id="score">{state.startTimeout ? state.startTimeout : state.rightNotes}</div>
                     <div className="left-beat" id="left-beat" onClick={leftBeat(rhythm)}>
-                        TYK</div>
-                    <div className="right-beat" id="right-beat" onClick={rightBeat(rhythm)}>ТЫК</div>
+                        </div>
+                    <div className="right-beat" id="right-beat" onClick={rightBeat(rhythm)}></div>
                     <div className="left-guy idle">
                         <div className="human-pivot">
                             <div className="human-body">

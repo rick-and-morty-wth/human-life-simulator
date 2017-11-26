@@ -493,8 +493,7 @@ html.pixel-ratio-3 .navbar:after {
 #score {
     position: fixed;
     background: white;
-    padding: 2rem;
-    min-width: 40rem;
+    min-width: 10rem;
     text-align: center;
     border: 3px solid lightgray;
     border-bottom-left-radius: 1rem;
@@ -540,7 +539,7 @@ html.pixel-ratio-3 .navbar:after {
     height: 9rem;
     left: 3rem;
     top: calc(50vh - 7rem);
-    background-color: red;
+    /* background-color: red; */
     border-radius: 50%;
     text-align: center;
     color: white;
@@ -553,7 +552,7 @@ html.pixel-ratio-3 .navbar:after {
     color: white;
     font-size: 3rem;
     border-radius: 50%;
-    background-color: red;
+    /* background-color: red; */
     width: 14rem;
     height: 9rem;
     position: fixed;
