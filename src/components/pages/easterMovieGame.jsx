@@ -11,21 +11,32 @@ export default inject("easterGame")(observer(({easterGame}) => {
         <Page className="easter-movie-game-screen__wr">
         {easterGame.current ?
         <div>
-            <div className = 'header'>
-                <Header><span className = 'titleGameEaster'>Question #{parseInt(easterGame.current.id) + 1}</span>
-                <HomeSmallButton ></HomeSmallButton>
+            <div className = 'easter-movie-game__header'>
+                <Header>
+                    <div></div>
+                    <HomeSmallButton></HomeSmallButton>
                 </Header>
-
-
             </div>
             <div className = 'qustiontDiv'>
 
                 <div className = 'imageEasterMovie'><img className = 'imageEasterMovie-img' src={easterGame.current.url}/></div>
-                <div className = 'question'>{easterGame.current.name}</div>
+                <div className = 'question'>
+                    <div className="answer__badge">#{parseInt(easterGame.current.id) + 1}</div>
+                    {easterGame.current.name}
+                </div>
                 <div className = 'answer'>
-                    <button onClick={easterGame.next(easterGame.current.answer1, easterGame.current)}>{easterGame.current.answer1}</button>
-                    <button onClick ={easterGame.next(easterGame.current.answer2, easterGame.current)}>{easterGame.current.answer2}</button>
-                    <button onClick ={easterGame.next(easterGame.current.answer3, easterGame.current)}>{easterGame.current.answer3}</button>
+                    <div className="answer__item">
+                        <div className="answer__badge">A</div>
+                        <button onClick={easterGame.next(easterGame.current.answer1, easterGame.current)}>{easterGame.current.answer1}</button>
+                    </div>
+                    <div clasclassNames="answer__item">
+                        <div className="answer__badge">B</div>
+                        <button onClick ={easterGame.next(easterGame.current.answer2, easterGame.current)}>{easterGame.current.answer2}</button>
+                    </div>
+                    <div className="answer__item">
+                        <div className="answer__badge">C</div>
+                        <button onClick ={easterGame.next(easterGame.current.answer3, easterGame.current)}>{easterGame.current.answer3}</button>
+                    </div>
                 </div>
             </div>
         </div> : <div>

@@ -430,11 +430,11 @@ html.pixel-ratio-3 .navbar:after {
     color: white;
 }
 .imageEasterMovie-img{
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     box-sizing: border-box;
     padding: 0px;
-    height: 37vh;
+    height: 32vh;
     overflow: hidden;
     margin: auto;
 }
@@ -445,6 +445,41 @@ html.pixel-ratio-3 .navbar:after {
     transition: opacity .3s ease-in-out;
 }
 
+.easter-movie-game__header .navbar:after {
+    height: 20px;
+}
+
+.easter-movie-game__header .navbar__wr {
+    height: 76px;
+}
+
+.easter-movie-game-screen__wr .question, .easter-movie-game-screen__wr .answer__item {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20px 20px;
+}
+
+.easter-movie-game-screen__wr  .answer__item, .easter-movie-game-screen__wr .question {
+    display: flex;
+}
+
+.easter-movie-game-screen__wr .answer__badge {
+    display: block;
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    background: #86C100;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+.easter-movie-game__header .navbar {
+    top: -34px;
+}
 
 /* DANCING */
 

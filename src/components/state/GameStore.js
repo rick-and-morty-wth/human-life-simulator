@@ -16,19 +16,19 @@ const game = observable({
             sound: 'aCar'
         },
         {
+            id: 3,
+            image: level2,
+            path: "/dancing-game/",
+            name: 'Dancing Rick Bitches',
+            // sound: 'dancingBg'
+        },
+        {
             id: 2,
             image: level3,
             path: "/",
             name: 'Wabu-Labu-Dabdab',
             sound: 'wooVu'
         },
-        {
-            id: 3,
-            image: level2,
-            path: "/dancing-game/",
-            name: 'Dancing Rick Bitches',
-            // sound: 'dancingBg'
-        }
     ],
     storeItems: [
         {
