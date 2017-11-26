@@ -5,16 +5,22 @@ import LevelItem from '../controls/LevelItem/LevelItem';
 import {ContentBlock, Page} from 'framework7-react';
 import {inject, observer} from 'mobx-react';
 import {Link} from 'framework7-react';
-
+import HomeSmallButton from '../controls/HomeSmallButton/HomeSmallButton';
 export default inject("easterGame")(observer(({easterGame}) => {
     return (
         <Page className="easter-movie-game-screen__wr">
         {easterGame.current ?
         <div>
-            <div className = 'header'></div>
+            <div className = 'header'>
+                <Header><span className = 'titleGameEaster'>Question #{parseInt(easterGame.current.id) + 1}</span>
+                <HomeSmallButton ></HomeSmallButton>
+                </Header>
+
+
+            </div>
             <div className = 'qustiontDiv'>
-                <h2>Question #{parseInt(easterGame.current.id) + 1}</h2>
-                <div className = 'imageEasterMovie'><img src={easterGame.current.url}/></div>
+
+                <div className = 'imageEasterMovie'><img className = 'imageEasterMovie-img' src={easterGame.current.url}/></div>
                 <div className = 'question'>{easterGame.current.name}</div>
                 <div className = 'answer'>
                     <button onClick={easterGame.next(easterGame.current.answer1, easterGame.current)}>{easterGame.current.answer1}</button>
@@ -23,7 +29,12 @@ export default inject("easterGame")(observer(({easterGame}) => {
                 </div>
             </div>
         </div> : <div>
-            <div className='result'>Results TODO</div>
+            <div className='result'>
+
+            Results TODO
+            <div class='gameScore'>{easterGame.score.length}</div>
+
+            </div>
             <Link onClick={easterGame.reset()} back>Back</Link>
         </div>}
         </Page>

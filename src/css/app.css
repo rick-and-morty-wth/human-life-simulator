@@ -400,3 +400,18 @@ html.pixel-ratio-3 .navbar:after {
 .easter-movie-game-screen__wr button {
     color: white;
 }
+.imageEasterMovie-img{
+    object-fit: contain;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    height: 37vh;
+    overflow: hidden;
+    margin: auto;
+}
+.titleGameEaster{
+    font-size: 2em;
+    font-weight: 300;
+    opacity: .5;
+    transition: opacity .3s ease-in-out;
+}
