@@ -1,10 +1,18 @@
-import {About} from './components/pages/About';
-import {Form} from './components/pages/Form';
+import Home from './components/pages/Home';
+import Store from './components/pages/Store';
+import Levels from './components/pages/Levels';
+import easterMovieGame from './components/pages/easterMovieGame';
 
 export const routes = [{
-    path: '/about/',
-    component: About
+    path: '/',
+    component: Home
+},{
+    path: '/store/',
+    component: Store
 }, {
-    path: '/form/',
-    component: Form
+    path: '/levels/',
+    component: Levels
+},{
+    path: '/easter-movie-game/',
+    component: easterMovieGame
 }];

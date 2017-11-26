@@ -1,0 +1,65 @@
+{
+  "_from": "cordova-plugin-hidden-statusbar",
+  "_id": "cordova-plugin-hidden-statusbar@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-bRva6HzYc0MCY4ntJxrOi4B4+fU=",
+  "_location": "/cordova-plugin-hidden-statusbar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-hidden-statusbar",
+    "name": "cordova-plugin-hidden-statusbar",
+    "escapedName": "cordova-plugin-hidden-statusbar",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-hidden-statusbar/-/cordova-plugin-hidden-statusbar-1.0.0.tgz",
+  "_shasum": "6d1bdae87cd87343026389ed271ace8b8078f9f5",
+  "_spec": "cordova-plugin-hidden-statusbar",
+  "_where": "/Users/macbook/sandbox/pirateminds/human-life-simulator",
+  "author": {
+    "name": "Enrico Deleo",
+    "email": "hello@enricodeleo.com",
+    "url": "http://enricodeleo.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/enricodeleo/cordova-plugin-hidden-statusbar/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-hidden-statusbar",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova / PhoneGap Plugin that hides the statusbar at launch.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/enricodeleo/cordova-plugin-hidden-statusbar#readme",
+  "keywords": [
+    "cordova",
+    "ios",
+    "app",
+    "statusbar",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-hidden-statusbar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enricodeleo/cordova-plugin-hidden-statusbar.git"
+  },
+  "version": "1.0.0"
+}
