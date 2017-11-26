@@ -6,7 +6,7 @@ export default inject("sounds", "game", "player")(observer((props, context) => {
     let player = props.player;
 
     return (<a href={props.lvl.path} className={player.isDone.has(props.lvl.id) ? "level-item__wr level-item__done" : "level-item__wr"} onClick={()=> {
-            props.sounds.play("btn")();
+            props.sounds.play(props.lvl.sound || "btn")();
             player.mapIsDone(props.lvl)();
             }}>
         <div className="level-item__img-wr">

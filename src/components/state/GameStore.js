@@ -12,19 +12,22 @@ const game = observable({
             id: 1,
             image: level1,
             path: '/easter-movie-game',
-            name: 'Rick Driving Bitches'
+            name: 'Rick Driving Bitches',
+            sound: 'aCar'
         },
         {
             id: 2,
             image: level3,
             path: "/",
-            name: 'Wabu-Labu-Dabdab'
+            name: 'Wabu-Labu-Dabdab',
+            sound: 'wooVu'
         },
         {
             id: 3,
             image: level2,
             path: "/",
-            name: 'Dancing Rick Bitches'
+            name: 'Dancing Rick Bitches',
+            sound: 'letMeOut'
         }
     ],
     storeItems: [
