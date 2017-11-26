@@ -457,10 +457,20 @@ html.pixel-ratio-3 .navbar:after {
     font-size: 16px;
     font-weight: 300;
     margin: 20px 20px;
+    text-align: left;
 }
 
 .easter-movie-game-screen__wr  .answer__item, .easter-movie-game-screen__wr .question {
     display: flex;
+    align-items: center;
+}
+
+.easter-movie-game-screen__wr button {
+    padding: 0;
+    text-align: left;
+    border: none;
+    margin: 0;
+    background: transparent;
 }
 
 .easter-movie-game-screen__wr .answer__badge {
@@ -473,12 +483,43 @@ html.pixel-ratio-3 .navbar:after {
     min-height: 40px;
     background: #86C100;
     border-radius: 50%;
-    color: white;
+    color: black;
     text-align: center;
     line-height: 40px;
+    margin-right: 12px;
 }
+
+.easter-movie-game-screen__wr .question .answer__badge {
+    background: black;
+    box-shadow: inset 0 0 0 3px #86C100;
+    color: white
+}
+
 .easter-movie-game__header .navbar {
     top: -34px;
+}
+
+.easter-movie-game-screen__wr:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .1;
+    background: url('../images/bg-game-one.png') no-repeat center center;
+    background-size: cover;
+}
+
+.easter-movie-game-screen__wr:after {
+    border-bottom: none;
+    opacity: 0.9;
+    height: 300%;
+    top: -142px;
+    bottom: auto;
+    background: none;
+    z-index: -1;
+    background-image: linear-gradient(-1deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
 }
 
 /* DANCING */
