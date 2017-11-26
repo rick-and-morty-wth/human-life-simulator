@@ -1539,3 +1539,68 @@ html.pixel-ratio-3 .navbar:after {
 .kickAss .shin-pivot:not(.left) {
     animation: kickAssshin-pivotnotleft 0.5s infinite;
 }
+
+
+/* super-start-screen */
+.super-start-screen {
+    background: black;
+    background: url("../images/bg-gif.gif") center center no-repeat;
+    position: fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.super-start-screen .rick{
+    background:url("../images/rick.png");
+    background-size: contain;
+    animation: rotation 4s infinite linear;
+    top:0px;
+    right:10px;
+    position: fixed;
+    width: 45%;
+    height: 23%;
+    transition: all 5s cubic-bezier(0.42, 0, 1.0, 1.0);
+ }
+.super-start-screen .morty
+{
+    background:url("../images/morty.png");
+    animation: rotation 15s infinite linear;
+    background-size: contain;
+    left: 10px;
+    top:0px;
+    position:fixed;
+    width: 45%;
+    height: 23%;
+    transition: all 5s cubic-bezier(0.42, 0, 1.0, 1.0);
+}
+.super-start-screen .sperme.to-morty{
+    bottom: 95%;
+    left:5%;
+    transition: all 5s cubic-bezier(0.42, 0, 1.0, 1.0);
+}
+.super-start-screen .sperme.to-rick{
+    transition: all 5s cubic-bezier(0.42, 0, 1.0, 1.0);
+    bottom: 95%;
+   left:95%;
+}
+.super-start-screen .sperme{
+    background:url("../images/suprime.gif");
+    background-size: contain;
+    position:fixed;
+    left: 28%;
+    width: 45%;
+    height: 20%;
+    bottom: 0px;
+    transition: all 5s cubic-bezier(0.42, 0, 1.0, 1.0);
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
