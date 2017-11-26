@@ -2,6 +2,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 html, body {
     font-size: 6px;
+    background: black;
 }
 .button-gradient {
     background-image: radial-gradient(50% 134%, #CFFF32 50%, #86C100 100%);
