@@ -29,7 +29,10 @@ var headShape = new p2.Circle({ radius: headRadius }),
     upperLegShapeRight = new p2.Box({ width: upperLegSize, height: upperLegLength }),
     lowerLegShapeLeft = new p2.Box({ width: lowerLegSize, height: lowerLegLength }),
     lowerLegShapeRight = new p2.Box({ width: lowerLegSize, height: lowerLegLength }),
-    some_shape = new p2.Circle({ radius: headRadius * 2 });
+    some_shape = new p2.Circle({ radius: 0.3 });
+
+    console.log(some_shape);
+    some_shape.renderCanvas = function () {};
 
 export let shapes = {
     headShape,
@@ -58,7 +61,7 @@ bodyPartShapes.push(
     upperLegShapeLeft,
     lowerLegShapeRight,
     lowerLegShapeLeft,
-    some_shape
+    // some_shape
 );
 
 for (var i = 0; i < bodyPartShapes.length; i++) {
@@ -69,7 +72,7 @@ for (var i = 0; i < bodyPartShapes.length; i++) {
 
 // Lower legs - Left
 var lowerLeftLeg = new p2.Body({
-    mass: 1,
+    mass: 30,
     position: [-shouldersDistance / 2, lowerLegLength / 2],
 });
 lowerLeftLeg.addShape(shapes.lowerLegShapeLeft);
@@ -77,7 +80,7 @@ export {lowerLeftLeg}
 
 // Lower legs - Right
 var lowerRightLeg = new p2.Body({
-    mass: 1,
+    mass: 30 ,
     position: [shouldersDistance / 2, lowerLegLength / 2],
 });
 lowerRightLeg.addShape(shapes.lowerLegShapeRight);
@@ -235,27 +238,26 @@ var rightElbowJoint = new p2.RevoluteConstraint(lowerRightArm, upperRightArm, {
 rightElbowJoint.setLimits(-Math.PI / 8, Math.PI / 8);
 export {rightElbowJoint}
 
-
-// Bicycle
-var bicycle = new p2.Body({
-    mass: 2,
-    position: [1, 1],
-});
-bicycle.addShape(shapes.some_shape);
-export {bicycle}
+// // Bicycle
+// var bicycle = new p2.Body({
+//     mass: 2,
+//     position: [1, 1],
+// });
+// bicycle.addShape(shapes.some_shape);
+// export {bicycle}
 
 // Pivot to right
-var PivotToRightLeg = new p2.RevoluteConstraint(bicycle, lowerRightLeg, {
-    localPivotA: [1 / 2, -1],
-    localPivotB: [1 / 2, -1],
-});
-PivotToRightLeg.setLimits(-Math.PI / 8, Math.PI / 8);
-export {PivotToRightLeg}
+// var PivotToRightLeg = new p2.RevoluteConstraint(bicycle, lowerRightLeg, {
+//     localPivotA: [1 / 2, -1],
+//     localPivotB: [1 / 2, -1],
+// });
+// PivotToRightLeg.setLimits(-Math.PI / 8, Math.PI / 8);
+// export {PivotToRightLeg}
 
-// Pivot to left
-var PivotToLeftLeg = new p2.RevoluteConstraint(bicycle, lowerLeftLeg, {
-    localPivotA: [1, 1],
-    localPivotB: [1, 1],
-});
-PivotToLeftLeg.setLimits(-Math.PI / 8, Math.PI / 8);
-export {PivotToLeftLeg}
+// // Pivot to left
+// var PivotToLeftLeg = new p2.RevoluteConstraint(bicycle, lowerLeftLeg, {
+//     localPivotA: [1, 1],
+//     localPivotB: [1, 1],
+// });
+// PivotToLeftLeg.setLimits(-Math.PI / 8, Math.PI / 8);
+// export {PivotToLeftLeg}

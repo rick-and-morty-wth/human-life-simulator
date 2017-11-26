@@ -8,7 +8,7 @@ var app = new p2.WebGLRenderer(function () {
 
     // Create the world
     var world = new p2.World({
-        gravity: [0, -5]
+        gravity: [0, -0.5]
     });
 
     this.setWorld(world);
@@ -64,14 +64,14 @@ var app = new p2.WebGLRenderer(function () {
     world.addConstraint(rick.leftElbowJoint);
     world.addConstraint(rick.rightElbowJoint);
 
-    // Bicycle
-    world.addBody(rick.bicycle);
+    // // Bicycle
+    // world.addBody(rick.bicycle);
 
-    // Pivot To Right Leg
-    world.addConstraint(rick.PivotToRightLeg);
+    // // Pivot To Right Leg
+    // world.addConstraint(rick.PivotToRightLeg);
 
-    // Pivot To Left Leg
-    world.addConstraint(rick.PivotToLeftLeg);
+    // // Pivot To Left Leg
+    // world.addConstraint(rick.PivotToLeftLeg);
 
 
     // Create ground plane
@@ -80,18 +80,65 @@ var app = new p2.WebGLRenderer(function () {
     this.newShapeCollisionMask = collisGr.BODYPARTS | collisGr.OTHER | collisGr.GROUND;
 
     // Apply current engine torque after each step
-    var left = 0, right = 0;
+    var left = 0;
+    var right = 0;
+    var up = 0;
+    var bottom = 0;
+    var isRight;
+    var timers = {};
+    var nextKick = true;
+    var keylog = {};
+
+    function convulsion(bodyPart, power) {
+        bodyPart.force[0] = power[0];
+        bodyPart.force[1] = power[1];
+    }
+
     world.on("postStep", function (evt) {
-        rick.bicycle.angularForce += (left - right) * 100;
+        if (right && !keylog.right) {
+
+            let name = 'right';
+            console.log(name)
+            clearTimeout(timers[name]);
+            keylog[name] = true;
+            timers[name] = setTimeout(() => { keylog[name] = undefined; }, 1300)
+
+            convulsion(rick.upperRightLeg, [(right - left) * 800, 0])
+        } else if (left && !keylog.left) {
+            let name = 'left';
+            console.log(name)
+            clearTimeout(timers[name]);
+            keylog[name] = true;
+            timers[name] = setTimeout(() => { keylog[name] = undefined; }, 1300)
+
+            convulsion(rick.upperLeftLeg, [0, (left - right) * 800])
+        } else if (up && !keylog.up) {
+            let name = 'up';
+            console.log(name)
+            clearTimeout(timers[name]);
+            keylog[name] = true;
+            timers[name] = setTimeout(() => { keylog[name] = undefined; }, 1300)
+
+            convulsion(rick.pelvis, [0, 1300])
+        }
     });
+
 
     this.on("keydown", function (evt) {
         switch (evt.keyCode) {
             case 39:
                 right = 1;
+                isRight = true;
                 break;
+
             case 37:
                 left = 1;
+                isRight = false;
+                break;
+
+            case 32:
+                up = 1;
+                isRight = false;
                 break;
         }
     }).on("keyup", function (evt) {
@@ -102,6 +149,10 @@ var app = new p2.WebGLRenderer(function () {
             case 37:
                 left = 0;
                 break;
+            case 32:
+                up = 0;
+                break;
+
         }
     });
 

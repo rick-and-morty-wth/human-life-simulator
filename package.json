@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rsync -a -v ./build/* ./www && sed -i '' 's#=\"\/#=\".\/#g' ./www/*.html",
+    "build": "react-scripts build && rsync -a -v ./build/* ./www && sed -i '' 's#=\"/#=\"./#g' ./www/*.html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -21,6 +21,7 @@
     "cordova-plugin-whitelist": "^1.3.3",
     "framework7": "^1.5.3",
     "framework7-react": "^0.9.1",
+    "live-server": "^1.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
