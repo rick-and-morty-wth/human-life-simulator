@@ -25,9 +25,9 @@ const game = observable({
         {
             id: 3,
             image: level2,
-            path: "/",
+            path: "/dancing-game/",
             name: 'Dancing Rick Bitches',
-            sound: 'letMeOut'
+            // sound: 'dancingBg'
         }
     ],
     storeItems: [

@@ -5,6 +5,7 @@ import let_me_out from '../../sounds/let_me_out_.wav';
 import turn_into_a_car from '../../sounds/turn_into_a_car.wav';
 import bg_music from '../../sounds/bg-music.mp3';
 import btn_click from '../../sounds/btn-click.wav';
+import bgMusic from '../../sounds/main-game.mp3';
 
 const sounds = observable({
     ohYeah: {
@@ -25,6 +26,10 @@ const sounds = observable({
     },
     btn: {
         src: btn_click,
+        isPlaying: false
+    },
+    dancingBg: {
+        src: bgMusic,
         isPlaying: false
     },
     bg: {

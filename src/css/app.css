@@ -1,11 +1,12 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-
+html, body {
+    font-size: 6px;
+}
 .button-gradient {
     background-image: radial-gradient(50% 134%, #CFFF32 50%, #86C100 100%);
-    border: 1px solid rgba(255,255,255,0.40);
+    border: 1px solid rgba(255, 255, 255, 0.40);
 }
-
 /* PLAYER PROCESS */
 
 .player-process__wr {
@@ -31,7 +32,9 @@
     font-size: 10px;
 }
 
+
 /* BUTTON */
+
 .button__wr {
     position: relative;
     display: inline-block;
@@ -48,7 +51,9 @@
     z-index: 2;
 }
 
+
 /* FOOTER */
+
 .footer__wr {
     position: absolute;
     bottom: 0;
@@ -59,6 +64,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .footer__wr:after {
     position: absolute;
     bottom: 0;
@@ -68,14 +74,16 @@
     height: 140%;
     content: ' ';
     opacity: 0.9;
-    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
 }
 
-.footer__wr .button__wr + .button__wr {
+.footer__wr .button__wr+.button__wr {
     margin-left: 24px;
 }
 
+
 /* NAVBAR */
+
 .navbar__wr {
     height: 94px;
 }
@@ -100,14 +108,16 @@
     bottom: auto;
     background: none;
     z-index: -1;
-    background-image: linear-gradient(-1deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    background-image: linear-gradient(-1deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
 }
 
 html.pixel-ratio-3 .navbar:after {
     transform: none;
 }
 
+
 /* STORE */
+
 .store-screen__wr {
     background: black;
 }
@@ -116,15 +126,20 @@ html.pixel-ratio-3 .navbar:after {
     margin-bottom: 48px;
 }
 
+
 /* LEVELS */
-.levels-screen__wr  {
+
+.levels-screen__wr {
     background: black;
 }
 
+
 /* LEVELS */
+
 .shopping-screen__wr {
     background: black;
 }
+
 .shopping-screen__wr:before {
     content: ' ';
     position: absolute;
@@ -146,10 +161,12 @@ html.pixel-ratio-3 .navbar:after {
     height: 414px;
     content: ' ';
     opacity: 0.9;
-    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
 }
 
+
 /* HOME */
+
 .home-screen__wr {
     background: url('../images/bg.png') no-repeat center center;
     background-size: cover;
@@ -159,7 +176,9 @@ html.pixel-ratio-3 .navbar:after {
     display: none;
 }
 
+
 /* STORE */
+
 .content-block {
     margin: 68px 0 68px;
     padding: 0;
@@ -173,7 +192,8 @@ html.pixel-ratio-3 .navbar:after {
     padding: 0;
 }
 
-.content-block-inner:before, .content-block-inner:after {
+.content-block-inner:before,
+.content-block-inner:after {
     content: none;
 }
 
@@ -223,6 +243,7 @@ html.pixel-ratio-3 .navbar:after {
     text-align: center;
     margin-top: 39px;
 }
+
 .store__shop-btn {
     /* Rectangle 3: */
     display: inline-block;
@@ -238,12 +259,13 @@ html.pixel-ratio-3 .navbar:after {
     font-weight: 200;
     color: #1D1D1D;
     letter-spacing: 0;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.50);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.50);
     margin: auto;
     transition: opacity .1s ease-in-out;
 }
 
-.store__shop-btn:active, .store__shop-btn:hover {
+.store__shop-btn:active,
+.store__shop-btn:hover {
     background: #A8DE17;
     background-image: linear-gradient(-180deg, #B4EC51 0%, #A8DE17 100%);
     opacity: .6;
@@ -260,6 +282,7 @@ html.pixel-ratio-3 .navbar:after {
 .login-screen-content {
     background: transparent;
 }
+
 
 /* .login-screen-content:after {
     position: absolute;
@@ -297,14 +320,16 @@ html.pixel-ratio-3 .navbar:after {
     font-weight: 300;
 }
 
+
 /* LEVEL ITEM */
+
 .level-item__wr {
     display: flex;
     align-items: center;
     padding: 0 23px 0 67px;
 }
 
-.level-item__wr + .level-item__wr {
+.level-item__wr+.level-item__wr {
     margin-top: 64px;
 }
 
@@ -321,7 +346,7 @@ html.pixel-ratio-3 .navbar:after {
     font-weight: 300;
 }
 
-.level-item__is-done  {
+.level-item__is-done {
     margin-bottom: 8px;
 }
 
@@ -329,7 +354,8 @@ html.pixel-ratio-3 .navbar:after {
     margin-top: 8px;
 }
 
-.level-item__best-score, .level-item__is-done {
+.level-item__best-score,
+.level-item__is-done {
     font-weight: 300;
     color: white;
     font-size: 12px;
@@ -377,7 +403,8 @@ html.pixel-ratio-3 .navbar:after {
     fill: black!important;
 }
 
-.levels-line, .levels-line-two {
+.levels-line,
+.levels-line-two {
     position: absolute;
     left: 40px;
     top: 0;
@@ -391,7 +418,9 @@ html.pixel-ratio-3 .navbar:after {
     z-index: -1;
 }
 
+
 /* MOVIE GAME */
+
 .easter-movie-game-screen__wr {
     color: white;
     background: black;
@@ -414,4 +443,1024 @@ html.pixel-ratio-3 .navbar:after {
     font-weight: 300;
     opacity: .5;
     transition: opacity .3s ease-in-out;
+}
+
+
+/* DANCING */
+
+.dancing-game-screen__wr {
+    background: black;
+}
+
+.dancing-game-screen__wr {
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.human-left {
+    transform: scaleX(-1);
+    position: absolute;
+    right: 0px;
+}
+
+.human-center {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-30%);
+}
+
+.human-pivot * {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.human-pivot .head-pivot,
+.human-pivot .biceps-pivot,
+.human-pivot .arm-pivot,
+.human-pivot .thigh-pivot,
+.human-pivot .shin-pivot {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+#score img {
+    text-align: center;
+}
+
+#score {
+    position: fixed;
+    background: white;
+    padding: 2rem;
+    min-width: 40rem;
+    text-align: center;
+    border: 3px solid lightgray;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top: none;
+    top: 0px;
+    font-size: 5rem;
+    left: 50vw;
+    transform: translateX(-50%);
+}
+
+@keyframes beatAnim {
+    0% {
+        top: -18rem;
+        left: -18rem;
+        width: 50rem;
+        height: 50rem;
+    }
+    100% {
+        top: 2rem;
+        left: 2rem;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+.beat {
+    animation: beatAnim 0.5s;
+    animation-duration: 1;
+    animation-fill-mode: both;
+    border: 5px solid blueviolet;
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.left-beat {
+    position: fixed;
+    width: 14rem;
+    padding-top: 5rem;
+    height: 9rem;
+    left: 3rem;
+    top: calc(50vh - 7rem);
+    background-color: red;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.right-beat {
+    padding-top: 5rem;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: red;
+    width: 14rem;
+    height: 9rem;
+    position: fixed;
+    top: calc(50vh - 7rem);
+    right: 3rem;
+}
+
+.container {
+    position: relative;
+    max-width: 54rem;
+    top: calc(50vh - 18.5rem);
+    margin: 0 auto;
+}
+
+.human-pivot {
+    height: 37rem;
+    width: 10rem;
+    position: relative;
+    float: left;
+    margin-right: 7rem;
+}
+
+.human-body {
+    top: 10rem;
+    height: 13rem;
+    width: 7rem;
+    background-image: url('../images/morty/body.png');
+}
+
+.head-pivot {
+    top: 2rem;
+    width: 1rem;
+    left: 3.5rem;
+}
+
+.head {
+    z-index: 4;
+    top: -10rem;
+    left: -5rem;
+    height: 10rem;
+    width: 10rem;
+    background-image: url('../images/morty/head.png');
+}
+
+.biceps-pivot {
+    top: 3rem;
+    left: 2rem;
+    height: 1px;
+    width: 1px;
+}
+
+.biceps-pivot:not(.left) {
+    left: initial;
+    right: 2rem;
+}
+
+.biceps {
+    width: 6rem;
+    height: 3rem;
+    top: -1.5rem;
+    left: -6rem;
+    background-image: url('../images/morty/biceps.png');
+}
+
+.biceps:not(.left) {
+    left: initial;
+    right: 0.5rem;
+    background-image: url('../images/morty/bicepsRight.png');
+}
+
+.arm-pivot {
+    left: 0.5rem;
+    top: 1.5rem;
+}
+
+.arm-pivot:not(.left) {
+    left: initial;
+    right: 0.5rem;
+}
+
+.arm {
+    left: -6rem;
+    top: -1.5rem;
+    width: 6rem;
+    height: 3rem;
+    background-image: url('../images/morty/arm.png');
+}
+
+.arm:not(.left) {
+    left: initial;
+    right: 0rem;
+    background-image: url('../images/morty/armRight.png');
+}
+
+.thigh-pivot {
+    left: 2rem;
+    bottom: 0rem;
+}
+
+.thigh-pivot:not(.left) {
+    left: initial;
+    right: 2rem;
+}
+
+.thigh {
+    height: 7rem;
+    width: 3rem;
+    left: -1.5rem;
+    top: 0rem;
+    background-image: url('../images/morty/thigh.png');
+}
+
+.shin:not(.left) {
+    background-image: url('../images/morty/shinRight.png');
+}
+
+.shin-pivot {
+    left: 1.5rem;
+    bottom: 0rem;
+}
+
+.shin {
+    height: 7.8rem;
+    left: -1.7rem;
+    width: 3.4rem;
+    bottom: 0rem;
+    background-image: url('../images/morty/shin.png');
+}
+
+
+/*----------------------------Animations--------------------------*/
+
+@keyframes idlehuman-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idle .human-pivot {
+    animation: idlehuman-pivot 1s infinite;
+}
+
+@keyframes idlehuman-body {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idle .human-body {
+    animation: idlehuman-body 1s infinite;
+}
+
+@keyframes idlehead-pivot {
+    0% {
+        transform: rotate(6deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(6deg);
+    }
+}
+
+.idle .head-pivot {
+    animation: idlehead-pivot 1s infinite;
+}
+
+@keyframes idlebiceps-pivotleft {
+    0% {
+        transform: rotate(-66deg);
+    }
+    50% {
+        transform: rotate(-57deg);
+    }
+    100% {
+        transform: rotate(-66deg);
+    }
+}
+
+.idle .biceps-pivot.left {
+    animation: idlebiceps-pivotleft 1s infinite;
+}
+
+@keyframes idlearm-pivotleft {
+    0% {
+        transform: rotate(-42deg);
+    }
+    50% {
+        transform: rotate(-48deg);
+    }
+    100% {
+        transform: rotate(-42deg);
+    }
+}
+
+.idle .arm-pivot.left {
+    animation: idlearm-pivotleft 1s infinite;
+}
+
+@keyframes idlebiceps-pivotnotleft {
+    0% {
+        transform: rotate(81deg);
+    }
+    50% {
+        transform: rotate(78deg);
+    }
+    100% {
+        transform: rotate(81deg);
+    }
+}
+
+.idle .biceps-pivot:not(.left) {
+    animation: idlebiceps-pivotnotleft 1s infinite;
+}
+
+@keyframes idlearm-pivotnotleft {
+    0% {
+        transform: rotate(-9deg);
+    }
+    50% {
+        transform: rotate(-6deg);
+    }
+    100% {
+        transform: rotate(-9deg);
+    }
+}
+
+.idle .arm-pivot:not(.left) {
+    animation: idlearm-pivotnotleft 1s infinite;
+}
+
+@keyframes idlethigh-pivotleft {
+    0% {
+        transform: rotate(9deg);
+    }
+    50% {
+        transform: rotate(6deg);
+    }
+    100% {
+        transform: rotate(9deg);
+    }
+}
+
+.idle .thigh-pivot.left {
+    animation: idlethigh-pivotleft 1s infinite;
+}
+
+@keyframes idleshin-pivotleft {
+    0% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+.idle .shin-pivot.left {
+    animation: idleshin-pivotleft 1s infinite;
+}
+
+@keyframes idlethigh-pivotnotleft {
+    0% {
+        transform: rotate(-12deg);
+    }
+    50% {
+        transform: rotate(-21deg);
+    }
+    100% {
+        transform: rotate(-12deg);
+    }
+}
+
+.idle .thigh-pivot:not(.left) {
+    animation: idlethigh-pivotnotleft 1s infinite;
+}
+
+@keyframes idleshin-pivotnotleft {
+    0% {
+        transform: rotate(18deg);
+    }
+    50% {
+        transform: rotate(27deg);
+    }
+    100% {
+        transform: rotate(18deg);
+    }
+}
+
+.idle .shin-pivot:not(.left) {
+    animation: idleshin-pivotnotleft 1s infinite;
+}
+
+@keyframes idleCenterhuman-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .human-pivot {
+    animation: idleCenterhuman-pivot 6s infinite;
+}
+
+@keyframes idleCenterhuman-body {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .human-body {
+    animation: idleCenterhuman-body 6s infinite;
+}
+
+@keyframes idleCenterhead-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-18deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .head-pivot {
+    animation: idleCenterhead-pivot 6s infinite;
+}
+
+@keyframes idleCenterbiceps-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-24deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .biceps-pivot.left {
+    animation: idleCenterbiceps-pivotleft 6s infinite;
+}
+
+@keyframes idleCenterarm-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(36deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .arm-pivot.left {
+    animation: idleCenterarm-pivotleft 6s infinite;
+}
+
+@keyframes idleCenterbiceps-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(48deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .biceps-pivot:not(.left) {
+    animation: idleCenterbiceps-pivotnotleft 6s infinite;
+}
+
+@keyframes idleCenterarm-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-39deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-33deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .arm-pivot:not(.left) {
+    animation: idleCenterarm-pivotnotleft 6s infinite;
+}
+
+@keyframes idleCenterthigh-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(36deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(42deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .thigh-pivot.left {
+    animation: idleCenterthigh-pivotleft 6s infinite;
+}
+
+@keyframes idleCentershin-pivotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(6deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-33deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .shin-pivot.left {
+    animation: idleCentershin-pivotleft 6s infinite;
+}
+
+@keyframes idleCenterthigh-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-9deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.idleCenter .thigh-pivot:not(.left) {
+    animation: idleCenterthigh-pivotnotleft 6s infinite;
+}
+
+@keyframes idleCentershin-pivotnotleft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(21 deg);
+    }
+    50% {
+        transform: rotate(0 deg);
+    }
+    75% {
+        transform: rotate(3 deg);
+    }
+    100% {
+        transform: rotate(0 deg);
+    }
+}
+
+.idleCenter .shin-pivot:not(.left) {
+    animation: idleCentershin-pivotnotleft 6s infinite;
+}
+
+@keyframes punchhuman-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes punchhuman-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.punch .human-pivot {
+    animation: punchhuman-pivot 0.5s infinite;
+}
+
+@keyframes punchhuman-body {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.punch .human-body {
+    animation: punchhuman-body 0.5s infinite;
+}
+
+@keyframes punchhead-pivot {
+    0% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(6deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+.punch .head-pivot {
+    animation: punchhead-pivot 0.5s infinite;
+}
+
+@keyframes punchbiceps-pivotleft {
+    0% {
+        transform: rotate(-123deg);
+    }
+    50% {
+        transform: rotate(-138deg);
+    }
+    100% {
+        transform: rotate(-123deg);
+    }
+}
+
+.punch .biceps-pivot.left {
+    animation: punchbiceps-pivotleft 0.5s infinite;
+}
+
+@keyframes puncharm-pivotleft {
+    0% {
+        transform: rotate(-141deg);
+    }
+    50% {
+        transform: rotate(-138deg);
+    }
+    100% {
+        transform: rotate(-141deg);
+    }
+}
+
+.punch .arm-pivot.left {
+    animation: puncharm-pivotleft 0.5s infinite;
+}
+
+@keyframes punchbiceps-pivotnotleft {
+    0% {
+        transform: rotate(66deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(66deg);
+    }
+}
+
+.punch .biceps-pivot:not(.left) {
+    animation: punchbiceps-pivotnotleft 0.5s infinite;
+}
+
+@keyframes puncharm-pivotnotleft {
+    0% {
+        transform: rotate(-147deg);
+    }
+    50% {
+        transform: rotate(-12deg);
+    }
+    100% {
+        transform: rotate(-147deg);
+    }
+}
+
+.punch .arm-pivot:not(.left) {
+    animation: puncharm-pivotnotleft 0.5s infinite;
+}
+
+@keyframes punchthigh-pivotleft {
+    0% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(6deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+.punch .thigh-pivot.left {
+    animation: punchthigh-pivotleft 0.5s infinite;
+}
+
+@keyframes punchshin-pivotleft {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(-12deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+.punch .shin-pivot.left {
+    animation: punchshin-pivotleft 0.5s infinite;
+}
+
+@keyframes punchthigh-pivotnotleft {
+    0% {
+        transform: rotate(-6deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+
+.punch .thigh-pivot:not(.left) {
+    animation: punchthigh-pivotnotleft 0.5s infinite;
+}
+
+@keyframes punchshin-pivotnotleft {
+    0% {
+        transform: rotate(6deg);
+    }
+    50% {
+        transform: rotate(27deg);
+    }
+    100% {
+        transform: rotate(6deg);
+    }
+}
+
+.punch .shin-pivot:not(.left) {
+    animation: punchshin-pivotnotleft 0.5s infinite;
+}
+
+@keyframes kickAsshuman-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+.kickAss .human-pivot {
+    animation: kickAsshuman-pivot 0.5s infinite;
+}
+
+@keyframes kickAsshuman-body {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.kickAss .human-body {
+    animation: kickAsshuman-body 0.5s infinite;
+}
+
+@keyframes kickAsshead-pivot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.kickAss .head-pivot {
+    animation: kickAsshead-pivot 0.5s infinite;
+}
+
+@keyframes kickAssbiceps-pivotleft {
+    0% {
+        transform: rotate(-69deg);
+    }
+    50% {
+        transform: rotate(-51deg);
+    }
+    100% {
+        transform: rotate(-69deg);
+    }
+}
+
+.kickAss .biceps-pivot.left {
+    animation: kickAssbiceps-pivotleft 0.5s infinite;
+}
+
+@keyframes kickAssarm-pivotleft {
+    0% {
+        transform: rotate(-48deg);
+    }
+    50% {
+        transform: rotate(-48deg);
+    }
+    100% {
+        transform: rotate(-48deg);
+    }
+}
+
+.kickAss .arm-pivot.left {
+    animation: kickAssarm-pivotleft 0.5s infinite;
+}
+
+@keyframes kickAssbiceps-pivotnotleft {
+    0% {
+        transform: rotate(78deg);
+    }
+    50% {
+        transform: rotate(69deg);
+    }
+    100% {
+        transform: rotate(78deg);
+    }
+}
+
+.kickAss .biceps-pivot:not(.left) {
+    animation: kickAssbiceps-pivotnotleft 0.5s infinite;
+}
+
+@keyframes kickAssarm-pivotnotleft {
+    0% {
+        transform: rotate(-24deg);
+    }
+    50% {
+        transform: rotate(-24deg);
+    }
+    100% {
+        transform: rotate(-24deg);
+    }
+}
+
+.kickAss .arm-pivot:not(.left) {
+    animation: kickAssarm-pivotnotleft 0.5s infinite;
+}
+
+@keyframes kickAssthigh-pivotleft {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(-12deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+.kickAss .thigh-pivot.left {
+    animation: kickAssthigh-pivotleft 0.5s infinite;
+}
+
+@keyframes kickAssshin-pivotleft {
+    0% {
+        transform: rotate(9deg);
+    }
+    50% {
+        transform: rotate(36deg);
+    }
+    100% {
+        transform: rotate(9deg);
+    }
+}
+
+.kickAss .shin-pivot.left {
+    animation: kickAssshin-pivotleft 0.5s infinite;
+}
+
+@keyframes kickAssthigh-pivotnotleft {
+    0% {
+        transform: rotate(-6deg);
+    }
+    50% {
+        transform: rotate(-105deg);
+    }
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+
+.kickAss .thigh-pivot:not(.left) {
+    animation: kickAssthigh-pivotnotleft 0.5s infinite;
+}
+
+@keyframes kickAssshin-pivotnotleft {
+    0% {
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(12deg);
+    }
+    100% {
+        transform: rotate(12deg);
+    }
+}
+
+.kickAss .shin-pivot:not(.left) {
+    animation: kickAssshin-pivotnotleft 0.5s infinite;
 }
