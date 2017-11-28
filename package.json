@@ -4,18 +4,22 @@
   "version": "1.0.0",
   "description": "HumanLifeSimulator.",
   "main": "index.js",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rsync -a -v ./build/* ./www && sed -i '' 's#=\"/#=\"./#g' ./www/*.html",
+    "build": "react-scripts build && node ./build-fix.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "0.9.0"
+    "mv": "^2.1.1",
+    "react-scripts": "0.9.0",
+    "rimraf": "^2.6.2"
   },
   "author": "Rick&Morty WTH team",
   "license": "GNU General Public License v3.0",
   "dependencies": {
+    "build": "^0.1.4",
     "cordova-android": "^6.3.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-hidden-statusbar": "^1.0.0",

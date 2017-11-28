@@ -1,4 +1,4 @@
-# Framework7 React App Template
+# Rick and Morty app
 
 Running the app:
 
@@ -12,6 +12,10 @@ To build your app for deployment, run:
 
 ```
 npm run build
+cordova build ios
+cordova run ios 
+// or
+cordova run android 
 ```
 
 The build folder will then contain all of your app's files, optimized and ready for deployment.

@@ -4,7 +4,7 @@ import { observable } from 'mobx';
 const player = observable({
     blobs: 0,
     progress: 0,
-    person: false,
+    person: true,
     bestScore: {
         2: "200 jumps"
     },
