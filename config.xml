@@ -11,7 +11,7 @@
     <access origin="*" />
     <preference name="SplashScreen" value="none" />
     <preference name="SuppressesIncrementalRendering" value="true" />
-    <preference name="BackgroundColor" value="0x00000000" />
+    <preference name="BackgroundColor" value="0xff010101" />
     <preference name="DisallowOverscroll" value="true" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

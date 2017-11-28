@@ -88,6 +88,6 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="Fullscreen" value="true" />
     <preference name="SplashScreen" value="none" />
-    <preference name="BackgroundColor" value="0x00000000" />
+    <preference name="BackgroundColor" value="0xff010101" />
     <preference name="AutoHideSplashScreen" value="true" />
 </widget>
