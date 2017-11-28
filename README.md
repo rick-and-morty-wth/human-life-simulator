@@ -1,4 +1,6 @@
-# Rick and Morty app
+# Rick and Morty
+
+![](./1.gif)
 
 Running the app:
 
@@ -22,10 +24,5 @@ The build folder will then contain all of your app's files, optimized and ready 
 
 # TODO
 
-* Jumping game
-* Drunking walk game
-* Pazzle game
-* Shop
-* Design
-* Mobile optimization
-* Welcome screen
+* Test on Android
+* Test on IOS

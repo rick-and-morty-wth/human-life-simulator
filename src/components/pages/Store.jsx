@@ -10,7 +10,10 @@ var settings = {
     infinite: false,
     centerMode: true,
     centerPadding: '60px',
-    slidesToShow: 1
+    slidesToShow: 1,
+    swipeToSlide: true,
+    waitForAnimate: false,
+    speed: 100
 };
 
 export default inject("sounds", "game", "player")(observer(({sounds, game, player}) => {

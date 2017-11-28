@@ -3,6 +3,13 @@
 html, body {
     font-size: 6px;
     background: black;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .button-gradient {
     background-image: radial-gradient(50% 134%, #CFFF32 50%, #86C100 100%);
@@ -133,7 +140,6 @@ html.pixel-ratio-3 .navbar:after {
 .levels-screen__wr {
     background: black;
 }
-
 
 /* LEVELS */
 
@@ -300,7 +306,7 @@ html.pixel-ratio-3 .navbar:after {
 
 .store__shop-content {
     height: 39.6vh;
-    margin: 68px 0 0;
+    margin: 0 0 0;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -430,6 +436,10 @@ html.pixel-ratio-3 .navbar:after {
 .easter-movie-game-screen__wr button {
     color: white;
 }
+
+.easter-movie-game-screen__wr  .navbar .navbar-inner {
+    padding: 24px 20px 0;
+}
 .imageEasterMovie-img{
     object-fit: cover;
     width: 100%;
@@ -454,11 +464,20 @@ html.pixel-ratio-3 .navbar:after {
     height: 76px;
 }
 
+.page-content  .content-block.qustiontDiv {
+    margin: 0;
+    margin-top: -88px;
+    max-height: 100vh;
+    overflow: scroll;
+    padding-top: 76px;
+    padding-bottom: 32px;
+}
 .easter-movie-game-screen__wr .question, .easter-movie-game-screen__wr .answer__item {
     font-size: 16px;
     font-weight: 300;
     margin: 20px 20px;
     text-align: left;
+    color: white;
 }
 
 .easter-movie-game-screen__wr  .answer__item, .easter-movie-game-screen__wr .question {
@@ -529,6 +548,10 @@ html.pixel-ratio-3 .navbar:after {
     background: black;
 }
 
+.dancing-game-screen__wr .page-content {
+    display: block;
+    overflow: hidden;
+}
 .dancing-game-screen__wr {
     background: url(../images/background.jpg);
     background-size: cover;
@@ -1839,4 +1862,31 @@ html.pixel-ratio-3 .navbar:after {
     position: absolute;
     bottom: 0vw;
     transform: scale(3);
+}
+
+.login-screen, .popup {
+    background: black;
+}
+
+.page-content  .content-block {
+    margin: 0;
+    margin-top: -94px;
+    max-height: 100vh;
+    overflow: scroll;
+    padding-top: 150px;
+    padding-bottom: 64px;
+}
+
+.page-content .navbar:after {
+    top: -160px!important;
+}
+.page-content .navbar {
+    position: relative;
+    z-index: 500;
+    background:linear-gradient(-1deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
 }

@@ -14,6 +14,8 @@
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		7D038954AE2D462D9BCBDE66 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E2E0BCEA2843679F317192 /* CDVStatusBar.m */; };
+		47E37D7B80344BCCA5FE844B /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783F041D74243B685A65385 /* CDVSplashScreen.m */; };
+		F801BC696F894783A9DE2394 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DF80C12864491D83146AF2 /* CDVViewController+SplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HumanLifeSimulator/config.xml; sourceTree = "<group>"; };
 		62E2E0BCEA2843679F317192 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		E0FD6D7ADA4C4DDC91D7D304 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		7783F041D74243B685A65385 /* CDVSplashScreen.m */ = {isa = PBXFileReference; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		75DF80C12864491D83146AF2 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5359D33CF90C485EAAFD9861 /* CDVSplashScreen.h */ = {isa = PBXFileReference; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		772B7B54CA23441BA10F602B /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,10 @@
 			children = (
 				62E2E0BCEA2843679F317192 /* CDVStatusBar.m */,
 				E0FD6D7ADA4C4DDC91D7D304 /* CDVStatusBar.h */,
+				7783F041D74243B685A65385 /* CDVSplashScreen.m */,
+				75DF80C12864491D83146AF2 /* CDVViewController+SplashScreen.m */,
+				5359D33CF90C485EAAFD9861 /* CDVSplashScreen.h */,
+				772B7B54CA23441BA10F602B /* CDVViewController+SplashScreen.h */,
 			);
 			name = Plugins;
 			path = HumanLifeSimulator/Plugins;
@@ -297,6 +307,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				7D038954AE2D462D9BCBDE66 /* CDVStatusBar.m in Sources */,
+				47E37D7B80344BCCA5FE844B /* CDVSplashScreen.m in Sources */,
+				F801BC696F894783A9DE2394 /* CDVViewController+SplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +396,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 			};
 			name = Debug;
 		};
@@ -409,6 +422,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 			};
 			name = Release;
 		};

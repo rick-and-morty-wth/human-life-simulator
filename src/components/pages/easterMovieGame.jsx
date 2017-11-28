@@ -13,17 +13,13 @@ import {
 
 
 export default inject("easterGame", "sounds")(observer(({easterGame, sounds}) => {
-    return (
-        <Page className="easter-movie-game-screen__wr">
-        {easterGame.current ?
-        <div>
-            <div className = 'easter-movie-game__header'>
-                <Header>
-                    <div></div>
-                    <HomeSmallButton onClick={sounds.play("btn")}></HomeSmallButton>
-                </Header>
-            </div>
-            <div className = 'qustiontDiv'>
+    return (easterGame.current ?
+            <Page className="easter-movie-game-screen__wr">
+            <Header className = 'easter-movie-game__header'>
+                <div></div>
+                <HomeSmallButton onClick={sounds.play("btn")}></HomeSmallButton>
+            </Header>
+            <ContentBlock inner className = 'qustiontDiv'>
 
                 <div className = 'imageEasterMovie'><img className = 'imageEasterMovie-img' src={easterGame.current.url}/></div>
                 <div className = 'question'>
@@ -44,11 +40,13 @@ export default inject("easterGame", "sounds")(observer(({easterGame, sounds}) =>
                         <button onClick ={easterGame.next(easterGame.current.answer3, easterGame.current)}>{easterGame.current.answer3}</button>
                     </div>
                 </div>
-            </div>
-        </div> : <div>
+            </ContentBlock>
+        </Page> :
+        <Page className="easter-movie-game-screen__wr">
             <Header>
                 <HomeSmallButton onClick={sounds.play("btn")}></HomeSmallButton>
             </Header>
+            <ContentBlock>
             <div className="store__shop-content">
                 <div className="store__shop-title">Hey brrrp mr. meeseeks, get shwifty.</div>
                 <div className="store__shop-sub-title">75%</div>
@@ -62,7 +60,7 @@ export default inject("easterGame", "sounds")(observer(({easterGame, sounds}) =>
                     find a next game idiot
                 </div>
             </div>
-        </div>}
+        </ContentBlock>
         </Page>
     );
 }));
